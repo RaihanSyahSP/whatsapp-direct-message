@@ -1,5 +1,6 @@
-import { ExternalLinkIcon } from "@chakra-ui/icons";
+import { AtSignIcon, ExternalLinkIcon, SunIcon } from "@chakra-ui/icons";
 import {
+  Button,
   Code,
   Container,
   Heading,
@@ -51,7 +52,7 @@ export default function Index() {
             alt="Next.js and Chakra UI"
           /> */}
 
-          <VStack spacing="4" divider={<StackDivider borderColor="gray.200" />}>
+          <VStack spacing="1">
             <Heading as="h1" fontSize={{ base: "3xl", md: "5xl" }}>
               WhatsApp Direct
             </Heading>
@@ -61,13 +62,25 @@ export default function Index() {
             </Text>
           </VStack>
 
-          <Stack spacing={4}>
-            <InputGroup>
-              <InputLeftAddon children="+234" />
-              <Input type="tel" placeholder="phone number" focusBorderColor="pink.400"/>
-            </InputGroup>
-            <Textarea placeholder="Input your message" />
+          <Stack spacing={4} width="50vw">
+            <VStack align="start" spacing={1}>
+              <Text>Phone Number</Text>
+              <InputGroup>
+                <InputLeftAddon children="+234" />
+                <Input type="number" placeholder="phone number" focusBorderColor="pink.400"/>
+              </InputGroup>
+            </VStack>
+
+            <VStack align="start" spacing={1}>
+              <Text>Message</Text>
+              <Textarea placeholder="Input your message" />
+            </VStack>
+
+            <Button leftIcon={<SunIcon/>} colorScheme="blue">
+              Send Message
+            </Button>
           </Stack>
+
           <Stack>
             <Link
               color="teal.500"
