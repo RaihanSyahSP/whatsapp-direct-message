@@ -11,7 +11,9 @@ export default function Layout({ children }: LayoutProps) {
   const { colorMode } = useColorMode();
   const breakpoints = {
     base: "0",
-    sm: "",
+    lg: "0",
+    md: "0",
+    sm: "0",
   };
 
   return (

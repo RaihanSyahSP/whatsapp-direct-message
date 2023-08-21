@@ -25,7 +25,7 @@ const Header = () => {
         width="100%"
         zIndex="10"     
       >
-        <Heading as="h1" size="xl">
+        <Heading as="h1" size={{base: "md", lg:"lg"}}>
           WhatsApp Direct
         </Heading>
         <IconButton
