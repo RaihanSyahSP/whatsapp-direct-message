@@ -132,7 +132,6 @@ export default function Index() {
                   id="selectbox"
                   instanceId="selectbox"
                   // menuPortalTarget={document.body}
-                  menuPosition={"fixed"}
                   maxMenuHeight={250}
                 />
                 <Input
