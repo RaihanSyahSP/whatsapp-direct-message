@@ -1,12 +1,6 @@
-import React, { useState } from "react";
-import {
-  Heading,
-  Text,
-  HStack,
-  IconButton,
-  useColorMode,
-} from "@chakra-ui/react";
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
+import { Heading, HStack, IconButton, useColorMode } from "@chakra-ui/react";
+import React from "react";
 
 const Header = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -20,12 +14,12 @@ const Header = () => {
         justifyContent="space-between"
         bgColor={colorMode === "light" ? "white" : "gray.700"}
         color={colorMode === "light" ? "gray.700" : "white"}
-        boxShadow="md" 
+        boxShadow="md"
         position="fixed"
         width="100%"
-        zIndex="10"     
+        zIndex="10"
       >
-        <Heading as="h1" size={{base: "md", lg:"lg"}}>
+        <Heading as="h1" size={{ base: "md", lg: "lg" }}>
           WhatsApp Direct
         </Heading>
         <IconButton

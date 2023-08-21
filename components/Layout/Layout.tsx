@@ -1,3 +1,4 @@
+// eslint-disable-next-line simple-import-sort/imports
 import { ReactNode } from "react";
 import { Container, VStack, useColorMode } from "@chakra-ui/react";
 import Header from "./Header";
@@ -19,22 +20,22 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <>
       <Container
-            maxWidth="100%"
-            className="vercel"
-            paddingX={breakpoints}
-            bgColor={colorMode === "light" ? "gray.100" : "gray.800"}
-            color={colorMode === "light" ? "gray.700" : "white"}
-          >
+        maxWidth="100%"
+        className="vercel"
+        paddingX={breakpoints}
+        bgColor={colorMode === "light" ? "gray.100" : "gray.800"}
+        color={colorMode === "light" ? "gray.700" : "white"}
+      >
         <Header />
-            <VStack
-              align="center"
-              justify="center"
-              height="100vh"
-              spacing="6"
-              textAlign="center"
-            >
-              {children}
-            </VStack>
+        <VStack
+          align="center"
+          justify="center"
+          height="100vh"
+          spacing="6"
+          textAlign="center"
+        >
+          {children}
+        </VStack>
         <Footer />
       </Container>
     </>

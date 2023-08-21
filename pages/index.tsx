@@ -1,7 +1,8 @@
-import {  ArrowForwardIcon } from "@chakra-ui/icons";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+// eslint-disable-next-line simple-import-sort/imports
+import { ArrowForwardIcon } from "@chakra-ui/icons";
 import {
   Button,
-  Container,
   Heading,
   Input,
   InputGroup,
@@ -12,7 +13,7 @@ import {
   Flex,
   FormLabel,
 } from "@chakra-ui/react";
-import {isMobile} from "react-device-detect";
+import { isMobile } from "react-device-detect";
 import { Select } from "chakra-react-select";
 import { useSnackbar } from "notistack";
 
@@ -23,12 +24,13 @@ import { useEffect, useState } from "react";
 
 export default function Index() {
   const { enqueueSnackbar } = useSnackbar();
-  
-  const [listCountryCodes, setListCountryCodes] = useState<CountryPhonesProps[]>([]);
+  const [listCountryCodes, setListCountryCodes] = useState<
+    CountryPhonesProps[]
+  >([]);
   const [countryCode, setCountryCode] = useState<string>("");
   const [message, setMessage] = useState<string>("");
   const [phoneNumber, setPhoneNumber] = useState<string>("");
- 
+
   const fetchCountryCodes = async () => {
     try {
       const codes = await getCountryCodes();
@@ -36,7 +38,7 @@ export default function Index() {
     } catch (error) {
       console.error("Error fetching country codes:", error);
     }
-  }  
+  };
 
   const groupedOptions = listCountryCodes.map((country) => ({
     label: `${country.name} (${country.dial_code})`,
@@ -46,7 +48,7 @@ export default function Index() {
   const handleChangeCountry = (e: any) => {
     setCountryCode(e.value.replace("+", ""));
     console.log(countryCode);
-  }
+  };
 
   const handleChangePhoneNumber = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPhoneNumber(String(e.target.value));
@@ -56,7 +58,7 @@ export default function Index() {
   const handleMessage = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setMessage(encodeURIComponent(e.target.value));
     console.log(message);
-  }
+  };
 
   const sendMessage = () => {
     if (phoneNumber.length === 0) {
@@ -74,7 +76,9 @@ export default function Index() {
     }
 
     if (isMobile) {
-      const url = `https://wa.me/${countryCode + phoneNumber}${message.length > 0 ? `?text=${message}` : ""}}`;
+      const url = `https://wa.me/${countryCode + phoneNumber}${
+        message.length > 0 ? `?text=${message}` : ""
+      }}`;
       window.open(url, "_blank");
     } else {
       const url = `https://web.whatsapp.com/send?phone=${
@@ -82,13 +86,12 @@ export default function Index() {
       }${message.length > 0 ? `&text=${message}` : ""}`;
       window.open(url, "_blank");
     }
-  }
+  };
 
   useEffect(() => {
     fetchCountryCodes();
   }, []);
 
-    
   return (
     <div>
       <Head>
@@ -128,7 +131,7 @@ export default function Index() {
                   onChange={handleChangeCountry}
                   id="selectbox"
                   instanceId="selectbox"
-                  menuPortalTarget={document.body}
+                  // menuPortalTarget={document.body}
                   menuPosition={"fixed"}
                   maxMenuHeight={250}
                 />

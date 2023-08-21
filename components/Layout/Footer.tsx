@@ -1,7 +1,6 @@
-import React from 'react'
-import { HStack, Link } from "@chakra-ui/react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
-
+import { HStack, Link } from "@chakra-ui/react";
+import React from "react";
 
 const Footer = () => {
   return (
@@ -19,6 +18,6 @@ const Footer = () => {
       </HStack>
     </footer>
   );
-}
+};
 
-export default Footer
+export default Footer;
