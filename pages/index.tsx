@@ -95,7 +95,7 @@ export default function Index() {
   return (
     <div>
       <Head>
-        <title>WA Helper</title>
+        <title>WhatsApp Direct</title>
         <meta
           name="description"
           content="A web app to save your time to directly chat without saving the phone number"
@@ -139,7 +139,7 @@ export default function Index() {
                   type="number"
                   isRequired
                   name="phone_number"
-                  placeholder="phone number"
+                  placeholder="example: 81234567890"
                   onChange={handleChangePhoneNumber}
                 />
               </Flex>
@@ -147,7 +147,7 @@ export default function Index() {
           </VStack>
 
           <VStack align="start" spacing={1}>
-            <FormLabel>Message</FormLabel>
+            <FormLabel>Message (optional)</FormLabel>
             <Textarea
               placeholder="Input your message"
               onChange={handleMessage}
