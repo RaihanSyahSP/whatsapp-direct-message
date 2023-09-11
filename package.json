@@ -14,7 +14,7 @@
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
     "axios": "^1.4.0",
-    "chakra-react-select": "^4.7.0",
+    "chakra-react-select": "^4.7.1",
     "framer-motion": "^10",
     "next": "13.4.19",
     "notistack": "^3.0.1",
